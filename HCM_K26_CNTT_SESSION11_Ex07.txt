@@ -1,0 +1,27 @@
+SESSION11
+Bài 7: Gỡ Lỗi Tài Liệu Kế Hoạch Hội Nghị Khoa Học Sinh Viên
+
+Tên lớp: HCM K26 CNTT2
+Môn học: Nhập môn công nghệ thông tin
+Họ và tên: LƯƠNG THANH THƯ
+
+Phần 1: Phân tích.
+
+Vì sao Auto TOC không hoạt động: cả 7 dòng tiêu đề chỉ được định dạng thủ công (đổi cỡ chữ, in đậm, tô màu) trên style Normal. Auto TOC chỉ quét các đoạn gán Heading 1, 2, 3, không quan tâm hình thức, nên không tìm thấy tiêu đề nào và mục lục rỗng.
+
+Dòng 2.1.1. Tiểu ban Kỹ thuật bị nhầm cấp: dòng này phải là Heading 3 nhưng lại có định dạng giống hệt H2 (cỡ 13, màu xanh). Nhầm cấp làm mục lục thụt sai: gán thành H2 thì mất quan hệ cha-con với 2.1; gán H2 thành H3 thì thụt quá sâu, nhảy cấp H1 → H3, cây phân cấp bị lệch.
+
+Phần 2: Sửa lỗi và nghiệm thu
+Gán đúng cấp: đặt con trỏ vào dòng, nhấn Ctrl+Shift+N (về Normal), rồi gán style.
+Dòng						Style			Phím tắt
+1. Thông tin chung hội nghị			Heading 1		Ctrl+Alt+1
+1.1. Tên hội nghị				Heading 2		Ctrl+Alt+2
+1.2. Thời gian & địa điểm			Heading 2		Ctrl+Alt+2
+2. Cơ cấu ban tổ chức				Heading 1		Ctrl+Alt+1
+2.1. Ban Nội dung				Heading 2		Ctrl+Alt+2
+2.1.1. Tiểu ban Kỹ thuật			Heading 3		Ctrl+Alt+3
+3. Lịch trình sự kiện				Heading 1		Ctrl+Alt+1
+
+Sau đó vào References -> Table of Contents -> Automatic Table, mục lục hiện đủ 3 cấp: Chương -> Mục -> Chi tiết.
+
+Bẫy dữ liệu (mục 3 bị đẩy từ trang 2 sang trang 4): mục lục không tự cập nhật số trang vì TOC là field lưu số trang tại thời điểm tạo. Cần click vào mục lục, chọn Update Table -> Update page numbers only (hoặc phím F9). Nên bấm Ctrl+A rồi F9 trước khi in hoặc gửi file.

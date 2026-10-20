@@ -1,0 +1,30 @@
+SESSION11
+Bài 1: Chuẩn hóa Heading Styles cho tài liệu SRS
+
+Tên lớp: HCM K26 CNTT2
+Môn học: Nhập môn công nghệ thông tin
+Họ và tên: LƯƠNG THANH THƯ
+
+Phần 1: Phân tích.
+
+Nguyên nhân mục lục trống: Nam chỉ dùng định dạng thủ công (đổi cỡ chữ 20, 18, tô màu) trên style Normal. Word nhận tiêu đề dựa vào style Heading 1/2/3, không dựa vào hình thức, nên bảng mục lục báo “No table of contents entries found”.
+Bẫy dữ liệu: một đoạn văn dài 5 trang bị gán nhầm Heading 1, nên mục lục hiện cả đoạn văn thay vì tiêu đề. Vì sao đổi màu phải sửa từng trang: định dạng thủ công gắn lên từng đoạn riêng lẻ. Dùng Styles thì sửa một lần, cả tài liệu đổi theo.
+
+Phần 2: Sửa lỗi
+Nội dung	Gán			Gán
+1. Giới thiệu	Heading 1		Heading 1
+1.1. Mục tiêu	Heading 2		Heading 2
+1.1.1. Mục tiêu chung			Heading 3
+2. Phạm vi hệ thống			Heading 1
+2.1. Chức năng chính			Heading 2
+2. Yêu cầu chức năng			Heading 1
+Đoạn văn dài 5 trang			Về Normal (Ctrl+Shift+N)
+
+
+Các bước:
+
+Xóa định dạng tay (Ctrl+Shift+N), rồi gán Heading (Ctrl+Alt+1/2/3).
+Kiểm tra cây tiêu đề bằng View -> Navigation Pane.
+Đổi màu/cỡ chữ: chuột phải style Heading -> Modify (sửa một lần cho cả tài liệu).
+Chèn mục lục: References ->Table of Contents -> Automatic Table.
+Khi nội dung thay đổi số trang: chọn mục lục, nhấn F9 (Update entire table).

@@ -1,0 +1,24 @@
+SESSION11
+Bài 2 : Khắc phục sự cố dữ liệu trong kho thiết bị IoT
+
+Tên lớp: HCM K26 CNTT2
+Môn học: Nhập môn công nghệ thông tin
+Họ và tên: LƯƠNG THANH THƯ
+
+
+Phần 1: Phân tích (ít nhất 3 quy tắc bị vi phạm)
+#	Lỗi						Quy tắc vi phạm				Hậu quả
+1	Ô Merge Cell ở hàng tiêu đề			Quy tắc 1 (header không merge)		Filter không nhận đúng từng cột (cột “Ghi chú” không có nút lọc)
+2	Dòng 6 trống giữa bảng				Quy tắc 4 (không hàng trống)		Cắt đứt vùng lọc, nút Filter “biến mất” giữa bảng
+3	Cột Trạng thái có hỏng và hỏng (thừa dấu cách)	Quy tắc 3 (1 cột = 1 loại thông tin,    Filter tách thành 2 nhóm “hỏng” dù mắt thường thấy giống nhau
+                                                        dữ liệu phải đồng nhất)	                 
+
+Lưu ý: Excel Filter không phân biệt hoa/thường, nên nguyên nhân tách nhóm thực sự là dấu cách thừa, không phải chữ “Hỏng” viết hoa.
+
+Phần 2: Hoàn thiện
+
++ Bỏ merge: chọn ô merge, bấm Merge & Center một lần để Unmerge, điền lại để mỗi cột có đúng 1 ô tiêu đề.
++ Xóa dòng trống: chuột phải số hàng 6, chọn Delete (xóa cả hàng).
++ Làm sạch cột Trạng thái: tạo cột phụ =TRIM(E2), kéo xuống hết, Copy rồi Paste Special -> Values đè lại cột E, xóa cột phụ.
++ Bật lại Filter: chọn một ô trong bảng, nhấn Ctrl+Shift+L. Cột Trạng thái giờ chỉ còn 2 giá trị: Hỏng và Hoạt động.
++ Phòng ngừa: dùng Data Validation -> List (Hoạt động, Hỏng) cho cột Trạng thái.

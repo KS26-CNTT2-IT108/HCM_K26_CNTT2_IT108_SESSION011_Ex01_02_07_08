@@ -1,0 +1,34 @@
+SESSION11
+Bài 8: Chữa Lỗi Bảng Đăng Ký Báo Cáo Viên Không Lọc Được
+
+Tên lớp: HCM K26 CNTT2
+Môn học: Nhập môn công nghệ thông tin
+Họ và tên: LƯƠNG THANH THƯ
+
+Phần 1: Phân tích lỗi
+
+- Hàng 1 là tiêu đề bảng (có thể merge), không phải tên cột: vi phạm Quy tắc 1.
+- Dòng TỔNG SỐ CNTT: 45 chen giữa dữ liệu, các ô khác trống: vi phạm Quy tắc 4 (không hàng trống), Quy tắc 5 (tổng phải để ngoài bảng) và Quy tắc 2, 3 (dòng này không phải bản ghi, cột Khoa chứa câu “TỔNG SỐ”).
+- Ô B3 Trần Thị Bình thừa dấu cách cuối: dữ liệu không sạch.
+
+Hậu quả: dòng tổng và dòng trống cắt đứt vùng lọc, nên các dòng bên dưới không được lọc và chỉ ra 2 kết quả thay vì ~35.
+
+Vì sao B3 không khớp: Filter so sánh từng ký tự. "Trần Thị Bình " dài hơn "Trần Thị Bình" một dấu cách (mã 32) nên hai chuỗi khác nhau dù nhìn giống hệt.
+
+Phần 2: Sửa lỗi
+
+Cấu trúc đúng chuẩn:
+
+Hàng 1: STT 		 Họ và Tên 		 Khoa/Viện 	 Điểm xét duyệt 	 Trạng thái   <- header, không merge
+Hàng 2: 1   		 Nguyễn Văn An 		 CNTT  		 8.5 			 Đã duyệt
+Hàng 3: 2   		 Trần Thị Bình 		 CNTT  		 7.9 			 Chờ duyệt
+...     (liên tục, không dòng trống)
+
+Tổng đặt NGOÀI bảng: =COUNTIF(C2:C121,"CNTT")
+
+TRIM và thao tác lọc:
+
+Cột phụ =TRIM(B2), =TRIM(C2), kéo xuống hết, rồi Paste Values đè lên cột gốc.
+Xóa dòng tiêu đề, dòng TỔNG và hàng trống.
+Chọn một ô trong bảng, nhấn Ctrl+Shift+L.
+Cột Khoa: chỉ tick CNTT. Cột Điểm: Filter by condition -> ≥ 8.
